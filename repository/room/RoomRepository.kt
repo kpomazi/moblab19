@@ -14,7 +14,7 @@ class RoomRepository @Inject constructor() : Repository {
         // Empty
     }
 
-    override fun getFavourites(): List<Stuff> {
+    override fun getStuffs(): List<Stuff> {
         return stuffsDao.getStuffs()
     }
 

@@ -31,7 +31,7 @@ class MockNetworkModule {
 
     @Provides
     @Singleton
-    fun provideFavouritesApi(retrofit: Retrofit): FavouritesApi {
+    fun provideStuffsApi(retrofit: Retrofit): StuffsApi {
         return networkModule.provideStuffsApi(retrofit)
     }
 }
