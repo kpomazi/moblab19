@@ -5,18 +5,18 @@ import javax.inject.Inject
 class MemoryRepository @Inject constructor() : Repository {
 
     companion object {
-        var favourites = mutableListOf(
-                Favourite(
+        var stuffs = mutableListOf(
+                Stuff(
                         title = "Example 1",
                         content = "Content 1",
                         id = 1L
                 ),
-                Favourite(
+                Stuff(
                         title = "Example 2",
                         content = "Content 2",
                         id = 3L
                 ),
-                Favourite(
+                Stuff(
                         title = "Example 3",
                         content = "Content 3",
                         id = 2L
@@ -32,24 +32,24 @@ class MemoryRepository @Inject constructor() : Repository {
         // Empty
     }
 
-    override fun getFavourites(): List<Favourite> {
-        return favourites
+    override fun getStuff(): List<Stuff> {
+        return stuffs
     }
 
-    override fun saveFavourite(favourite: Favourite) {
-        favourites.add(favourite)
+    override fun saveStuff(stuff: Stuff) {
+        stuffs.add(stuff)
     }
 
-    override fun updateFavourites(favourites: List<Favourite>) {
-        favourites.forEach { favourites ->
-            val removed = favourites.removeAll { it.id == favourites.id }
+    override fun updateStuffs(stuffs: List<Stuff>) {
+        stuffs.forEach { stuffs ->
+            val removed = stuffs.removeAll { it.id == stuffs.id }
             if (removed) {
-                favourites.add(favourites)
+                stuffs.add(stuffs)
             }
         }
     }
 
-    override fun removeFavourite(favourites: Favourite) {
-        favourites.remove(favourites)
+    override fun removeStuff(stuffs: Stuff) {
+        stuffs.remove(stuffs)
     }
 }

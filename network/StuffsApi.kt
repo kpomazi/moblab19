@@ -7,15 +7,15 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface FavouritesApi {
+interface StuffsApi {
 
-    @GET("Favourites")
-    fun getAllFavourites(): Call<List<Favourites>>
+    @GET("Stuffs")
+    fun getAllStuffs(): Call<List<Stuff>>
 
-    @PUT("Favourites/{id}")
+    @PUT("Stuffs/{id}")
     fun update(@Path("id") id: Long?, @Body email: String): Call<ResponseBody>
 
-    @DELETE("Flights/{id}")
+    @DELETE("Stuffs/{id}")
     fun delete(@Path("id") id: Long?): Call<ResponseBody>
 
 }

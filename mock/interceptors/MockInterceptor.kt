@@ -21,7 +21,7 @@ class MockInterceptor : Interceptor {
 
         return when {
             path == null -> MockHelper.makeResponse(request, headers, 404, "Unknown")
-            path.startsWith(NetworkConfig.ENDPOINT_PREFIX + "Favourites") -> FavouritesMock.process(request)
+            path.startsWith(NetworkConfig.ENDPOINT_PREFIX + "Stuffs") -> StuffsMock.process(request)
             else -> MockHelper.makeResponse(request, headers, 404, "Unknown")
         }
     }

@@ -37,8 +37,8 @@ class NetworkModule {
 	
 	@Provides
     @Singleton
-    fun provideFavouritesApi(retrofit: Retrofit): FavouritesApi {
-        return networkModule.provideFavouritesApi(retrofit)
+    fun provideStuffsApi(retrofit: Retrofit): StuffsApi {
+        return networkModule.provideStuffsApi(retrofit)
     }
 
 }

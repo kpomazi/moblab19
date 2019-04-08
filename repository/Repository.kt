@@ -3,16 +3,16 @@ import android.content.Context
 
 interface Repository {
 
-    fun getFavourites(): List<Favourite>
+    fun getStuffs(): List<Stuff>
 
     fun open(context: Context)
 
     fun close()
 
-    fun saveFavourite(favourite: Favourite)
+    fun saveStuff(stuff: Stuff)
 
-    fun updateFavourites(favourites: List<Favourite>)
+    fun updateStuffs(stuffs: List<Stuff>)
 
-    fun removeFavourite(favourite: Favourite)
+    fun removeStuff(stuff: Stuff)
 
 }

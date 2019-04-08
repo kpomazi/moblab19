@@ -4,34 +4,34 @@ import javax.inject.Inject
 
 class RoomRepository @Inject constructor() : Repository {
 
-    private lateinit var favouritesDao: FavouritesDao
+    private lateinit var stuffsDao: StuffsDao
 
     override fun open(context: Context) {
-        favouritesDao = Room.databaseBuilder(context, MyDatabase::class.java, "favourites.db").build().roomDao()
+        stuffsDao = Room.databaseBuilder(context, MyDatabase::class.java, "stuffs.db").build().roomDao()
     }
 
     override fun close() {
         // Empty
     }
 
-    override fun getFavourites(): List<Favourite> {
-        return favouritesDao.getFavourites()
+    override fun getFavourites(): List<Stuff> {
+        return stuffsDao.getStuffs()
     }
 
-    override fun saveFavourite(favourite: Favourite) {
-        favouritesDao.saveFavourite(flight)
+    override fun saveStuff(stuff: Stuff) {
+        stuffsDao.saveStuff(stuff)
     }
 
-    override fun updateFavourites(favourites: List<Favourite>) {
-        favouritesDao.updateFavourites(favourites)
+    override fun updateStuffs(stuffs: List<Stuff>) {
+        stuffsDao.updateStuffs(stuffs)
     }
 
-    override fun removeFavourite(favourite: Favourite) {
-        favouritesDao.removeFavourite(favourite)
+    override fun removeStuff(stuff: Stuff) {
+        stuffsDao.removeStuff(stuff)
     }
 
-    override fun isFavourite(favourite: Favourite): Boolean {
-        return favouritesDao.findFavouriteById(favourite.id) != null
+    override fun isStuff(stuff: Stuff): Boolean {
+        return stuffsDao.findStuffById(stuff.id) != null
     }
 
 }

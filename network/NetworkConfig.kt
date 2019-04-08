@@ -1,5 +1,3 @@
-package hu.aut.examples.szia.network
-
 @Suppress("MemberVisibilityCanBePrivate")
 object NetworkConfig {
     const val ENDPOINT_ADDRESS = "https://randomexample.com"

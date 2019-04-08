@@ -2,7 +2,7 @@ import com.google.gson.annotations.SerializedName
 
 import java.util.Date
 
-class Favourite(
+class Stuff(
         @SerializedName("date")
         val date: Date? = null,
 
